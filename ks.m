@@ -16,7 +16,6 @@ k = [0:N/2-1 0 -N/2+1:-1]'/16; % wave numbers
 pert = x * (rand * 0.01 - 0.005);  
 u = cos(x/16).*(1+sin(x/16));
 v = FastFourierTransform(u)';
-v
 
 
 % Main time-stepping loop:
