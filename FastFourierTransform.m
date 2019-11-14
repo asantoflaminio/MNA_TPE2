@@ -4,18 +4,14 @@
 % https://la.mathworks.com/matlabcentral/answers/67283-need-fft-code-for-matlab-not-built-in
 
 function z=FastFourierTransform(x)
-
-   N=length(x);
-   nfft=2^ceil(log2(N));
-   z=zeros(1,nfft);
-   accum=0;
-   
-    for k=1:nfft
-       for jj=1:N
-           accum=accum+x(jj)*exp(-2*pi*j*(jj-1)*(k-1)/nfft);
-       end
-    z(k)=accum;
-    accum=0;% Reset
+  N=length(x);
+  if N <= 1
+    z = x;
+  else
+    range = (0:N/2-1);
+    e = exp(-2i*pi/N).^range;
+    odd = FastFourierTransform(x(1:2:N-1));
+    even = e.*FastFourierTransform(x(2:2:N));
+    z = [even + odd, even - odd];
   end
-  
 return
