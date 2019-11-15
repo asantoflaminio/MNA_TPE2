@@ -15,8 +15,6 @@ k = [0:N/2-1 0 -N/2+1:-1]'/16; % wave numbers
 %pert = 0;  
 pert = x * (rand * 0.01 - 0.005);  
 u = cos(x/16).*(1+sin(x/16));
-t = fft(u);
-t
 
 v = FastFourierTransform(u);
 v

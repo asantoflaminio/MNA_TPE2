@@ -6,7 +6,7 @@
 function z=FastFourierTransform(x)
   N=length(x);
   if N <= 1
-    z = x';
+    z = x.';
   else
     n = floor(N/2);
     range = (0:n-1);
