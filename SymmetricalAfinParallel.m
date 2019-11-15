@@ -20,7 +20,7 @@ end
 function v = SymmetricalAfinParallel(h, v, k, q)
 
   % a chequear
-  % en paper tato usa q en vez de nucleus
+  % en paper usa q en vez de nucleus
   nucleus = 3
   x = v
   n = q/2

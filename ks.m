@@ -14,6 +14,7 @@ k = [0:N/2-1 0 -N/2+1:-1]'/16; % wave numbers
 %perturbacion inicial
 %pert = 0;  
 pert = x * (rand * 0.01 - 0.005);  
+% x = pert + x; % esto es para agregar la perturbacion
 u = cos(x/16).*(1+sin(x/16));
 v = FastFourierTransform(u);
 
