@@ -15,7 +15,11 @@ k = [0:N/2-1 0 -N/2+1:-1]'/16; % wave numbers
 %pert = 0;  
 pert = x * (rand * 0.01 - 0.005);  
 u = cos(x/16).*(1+sin(x/16));
-v = FastFourierTransform(u)';
+t = fft(u);
+t
+
+v = FastFourierTransform(u);
+v
 
 
 % Main time-stepping loop:
@@ -38,6 +42,3 @@ surf(tt,x,uu), shading interp, lighting phong, axis tight
 view([-90 90]), colormap(autumn); set(gca,'zlim',[-5 50])
 light('color',[1 1 0],'position',[-1,2,2])
 material([0.30 0.60 0.60 40.00 1.00]);
-
-
-

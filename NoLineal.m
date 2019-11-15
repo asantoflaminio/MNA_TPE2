@@ -2,10 +2,10 @@
 function v = NoLineal(dt, v, k)
 
   g = -(1/2)*1i*dt*k;
-  a = g.*FastFourierTransform(real(ifft(v)).^2)';
-  b = g.*FastFourierTransform(real(ifft(v + a/2)).^2)';
-  c = g.*FastFourierTransform(real(ifft(v + b/2)).^2)';
-  d = g.*FastFourierTransform(real(ifft(v + c)).^2)';
+  a = g.*FastFourierTransform(real(ifft(v)).^2);
+  b = g.*FastFourierTransform(real(ifft(v + a/2)).^2);
+  c = g.*FastFourierTransform(real(ifft(v + b/2)).^2);
+  d = g.*FastFourierTransform(real(ifft(v + c)).^2);
  % a = g.*fft(real(ifft(v)).^2);
  % b = g.*fft(real(ifft(v + a/2)).^2);
  % c = g.*fft(real(ifft(v + b/2)).^2);

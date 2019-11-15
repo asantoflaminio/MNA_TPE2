@@ -6,12 +6,14 @@
 function z=FastFourierTransform(x)
   N=length(x);
   if N <= 1
-    z = x;
+    z = x';
   else
-    range = (0:N/2-1);
-    e = exp(-2i*pi/N).^range;
-    odd = FastFourierTransform(x(1:2:N-1));
-    even = e.*FastFourierTransform(x(2:2:N));
-    z = [even + odd, even - odd];
+    n = floor(N/2);
+    range = (0:n-1);
+    e = exp(-2j*pi/N).^range;
+    even = FastFourierTransform(x(1:2:N)).';
+    odd = FastFourierTransform(x(2:2:N)).';
+    T = e.*odd;
+    z = [even + T, even - T].';
   end
 return
