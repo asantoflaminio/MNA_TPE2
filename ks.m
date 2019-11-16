@@ -31,13 +31,16 @@ for n = 1:nmax
   t = n*h;
   
     % LIE TROTTER
-    v = NoLineal(h, Lineal(h, v, k), k);
+    % v = NoLineal(h, Lineal(h, v, k), k);
+    
+    % Strang
+    v = Lineal(h/2, NoLineal(h, Lineal(h/2, v, k), k), k);
     
     %AFIN simetrico en serie
-    % v = SymmetricalAfinSeries(h, v, k, q);
+    %v = SymmetricalAfinSeries(h, v, k, q);
     
     %AFIN simetrico en paralelo
-    %v = SymmetricalAfinParallel(h, v, k, q);
+    % v = SymmetricalAfinParallel(h, v, k, q);
     
     % AFIN Asimetrico en serie
     % v = AsymmetricalAfinSeries(h, v, k, q);
