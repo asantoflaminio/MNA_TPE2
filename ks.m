@@ -23,10 +23,17 @@ v = FastFourierTransform(u);
 uu = u; tt = 0;
 tmax = 150; nmax = round(tmax/h); nplt = floor((tmax/100)/h);
 %g = -0.5i*k;
+
+% ORDEN
+q = 4;
+
 for n = 1:nmax
   t = n*h;
-  %ESTO ES LIE TROTTER
-  v = NoLineal(h, Lineal(h, v, k), k);
+  
+  % ESTO ES LIE TROTTER
+  % v = NoLineal(h, Lineal(h, v, k), k);
+    
+    v = SymmetricalAfinSeries(h, v, k, q);
   
   if mod(n,nplt)==0
     u = real(ifft(v));
