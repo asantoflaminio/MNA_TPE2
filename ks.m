@@ -30,10 +30,20 @@ q = 4;
 for n = 1:nmax
   t = n*h;
   
-  % ESTO ES LIE TROTTER
-  % v = NoLineal(h, Lineal(h, v, k), k);
+    % LIE TROTTER
+    v = NoLineal(h, Lineal(h, v, k), k);
     
-    v = SymmetricalAfinSeries(h, v, k, q);
+    %AFIN simetrico en serie
+    % v = SymmetricalAfinSeries(h, v, k, q);
+    
+    %AFIN simetrico en paralelo
+    %v = SymmetricalAfinParallel(h, v, k, q);
+    
+    % AFIN Asimetrico en serie
+    % v = AsymmetricalAfinSeries(h, v, k, q);
+    
+    % AFIN Asimetrico en paralelo
+    % v = AsymmetricalAfinParallel(h, v, k, q);
   
   if mod(n,nplt)==0
     u = real(ifft(v));
