@@ -11,7 +11,7 @@ function v = SymmetricalAfinParallel(h, v, k, q)
         for s = 1:labindex
           x= NoLineal(h/labindex, Lineal(h/labindex, x, k), k);
         end
-        x = gammas(labindex) * x; % esto en realidad estaba fuera del if
+        x = gammas(labindex) .* x; % esto en realidad estaba fuera del if y sin el '.'
       end
       
       
@@ -19,7 +19,7 @@ function v = SymmetricalAfinParallel(h, v, k, q)
          for s = 1:labindex-n 
              x= NoLineal(h/(labindex-n), Lineal(h/(labindex-n), x, k), k);
          end
-         x = gammas(labindex-n) * x; % esto en realidad estaba fuera del if
+         x = gammas(labindex-n) .* x; % esto en realidad estaba fuera del if y sin el '.'
       end
       
     end

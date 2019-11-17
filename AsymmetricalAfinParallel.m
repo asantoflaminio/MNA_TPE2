@@ -9,7 +9,7 @@ function v = AsymmetricalAfinParallel(h, v, k, q)
             for s = 1:labindex
               x = NoLineal(h/labindex, Lineal(h/labindex, x, k), k);
             end
-            x = gammas(labindex) .* x; % esto en realidad estaba fuera del if
+            x = gammas(labindex) .* x; % esto en realidad estaba fuera del if y sin el '.'
         end
     end
   end
