@@ -5,7 +5,7 @@ function v = SymmetricalAfinParallel(h, v, k, q)
   x = v;
   n = floor(q/2);
   gammas = sym_gammas_calculator(q);
-  spmd(n)
+  spmd(q) 
     for j = 1:n
       if labindex == j % en vez de j era s
         for s = 1:labindex
@@ -25,7 +25,7 @@ function v = SymmetricalAfinParallel(h, v, k, q)
     end
   end %cierro spmd
   
-  for s = 2:n % en vez de n era q
+  for s = 2:q 
     x{1} = x{1}+x{s};
   end
 
