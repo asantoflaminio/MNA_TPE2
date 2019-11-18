@@ -1,17 +1,17 @@
 function y = main
   % Basado en kursiv.m del paper de
   % AK Kassam y LN Trefethen
-  method = 5;
- 
+  method = 1;
+  
   r = display_method(method);
   
   if r == -1
-    disp("Terminando ejecución");
+    disp("Terminando ejecuciï¿½n");
     return
   end
   
   initialTime = datetime('now');
-  
+    
   % Spatial grid and initial condition:
   N = 128;
   x = 32*pi*(1:N)'/N;
@@ -62,8 +62,8 @@ function y = main
 
   finalTime = datetime('now');
 
-  % Calculate SpeedUp
-  speedUp = CalculateSpeedUp(initialTime, finalTime);
+  % Calculate Execution Time
+  executionTime = CalculateExecutionTime(initialTime, finalTime);
 
   % Plot results:
   surf(tt,x,uu), shading interp, lighting phong, axis tight
@@ -71,25 +71,25 @@ function y = main
   light('color',[1 1 0],'position',[-1,2,2])
   material([0.30 0.60 0.60 40.00 1.00]);
 
-  %imprimo speed up
-  speedUp
+  %Imprimo Execution Time
+  executionTime
 end
 
 function y = display_method(method)
     y = 1;
     
     if method == 1
-          disp("Método elegido: Lie Trotter.");
+          disp("Mï¿½todo elegido: Lie Trotter.");
     elseif method == 2
-          disp("Método elegido: Strang.");
+          disp("Mï¿½todo elegido: Strang.");
     elseif method == 3
-          disp("Método elegido: Afin Simétrico en Serie.");
+          disp("Mï¿½todo elegido: Afin Simï¿½trico en Serie.");
     elseif method == 4
-          disp("Método elegido: Afin Simétrico en Paralelo.");
+          disp("Mï¿½todo elegido: Afin Simï¿½trico en Paralelo.");
     elseif method == 5
-          disp("Método elegido: Afin Asimétrico en Serie.");
+          disp("Mï¿½todo elegido: Afin Asimï¿½trico en Serie.");
     elseif method == 6
-          disp("Método elegido: Afin Asimétrico en Paralelo.");
+          disp("Mï¿½todo elegido: Afin Asimï¿½trico en Paralelo.");
     else
           disp("ERROR. El metodo ingresado no existe.");
           y = -1;

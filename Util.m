@@ -1,4 +1,4 @@
-function s = CalculateSpeedUp(initialTime, finalTime)
+function s = CalculateExecutionTime(initialTime, finalTime)
 
   [hi,mi,si] = hms(initialTime);
   [hf,mf,sf] = hms(finalTime);   
@@ -9,7 +9,7 @@ function s = CalculateSpeedUp(initialTime, finalTime)
    mf = (hf * 60) + mf;
    sf = (mf * 60) + sf;
     
-   s = si / sf;
+   s = sf - si;
    return
    
 end
