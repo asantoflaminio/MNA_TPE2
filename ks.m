@@ -6,13 +6,14 @@ initialTime = datetime('now');
 % Spatial grid and initial condition:
 N = 128;
 x = 32*pi*(1:N)'/N;
-h = 1/4; % time step
+h = 0.25; % time step
 k = [0:N/2-1 0 -N/2+1:-1]'/16; % wave numbers
 
 %perturbacion inicial
-%pert = 0;  
-pert = x * (rand * 0.01 - 0.005);  
-% x = pert + x; % esto es para agregar la perturbacion
+pert = 0;  
+%pert = x * (rand * 0.01 - 0.005);  %Para activar perturbaciones
+%descomentar esto
+x = pert + x; % esto es para agregar la perturbacion
 
 % Condicion inicial!
 u = cos(x/16).*(1+sin(x/16));
@@ -33,19 +34,19 @@ for n = 1:nmax
     v = NoLineal(h, Lineal(h, v, k), k);
     
     % Strang
-    % v = Lineal(h/2, NoLineal(h, Lineal(h/2, v, k), k), k);
+    %v = Lineal(h/2, NoLineal(h, Lineal(h/2, v, k), k), k);
     
     %AFIN simetrico en serie
     %v = SymmetricalAfinSeries(h, v, k, q);
     
     %AFIN simetrico en paralelo
-    % v = SymmetricalAfinParallel(h, v, k, q);
+    %v = SymmetricalAfinParallel(h, v, k, q);
     
     % AFIN Asimetrico en serie
-    % v = AsymmetricalAfinSeries(h, v, k, q);
+    %v = AsymmetricalAfinSeries(h, v, k, q);
     
     % AFIN Asimetrico en paralelo
-    % v = AsymmetricalAfinParallel(h, v, k, q);
+    %v = AsymmetricalAfinParallel(h, v, k, q);
   
   if mod(n,nplt)==0
     u = real(ifft(v));

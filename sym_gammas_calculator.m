@@ -1,5 +1,5 @@
 function ans = sym_gammas_calculator(q)
-  n = q/2;
+  n = floor(q/2);
   M = ones(n);
   for j = 1:n
     for i = 1:n-1
