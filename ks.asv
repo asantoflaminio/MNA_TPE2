@@ -1,16 +1,16 @@
-function y = main
+function y = main(method)
   % Basado en kursiv.m del paper de
   % AK Kassam y LN Trefethen
-  method = 5;
- 
+
+  initialTime = datetime('now');
+  method
+  disp(method)
   r = display_method(method);
-  
+ 
   if r == -1
-    disp("Terminando ejecución");
+    disp("afafsfas");
     return
   end
-  
-  initialTime = datetime('now');
   
   % Spatial grid and initial condition:
   N = 128;
@@ -37,21 +37,24 @@ function y = main
   q = 4;
 
   for n = 1:nmax
-    t = n*h;
+      t = n*h;
     
-    if method == 1
-        v = NoLineal(h, Lineal(h, v, k), k);
-    elseif method == 2
-        v = Lineal(h/2, NoLineal(h, Lineal(h/2, v, k), k), k);
-    elseif method == 3
-        v = SymmetricalAfinSeries(h, v, k, q);
-    elseif method == 4
-        v = SymmetricalAfinParallel(h, v, k, q);
-    elseif method == 5
-        v = AsymmetricalAfinSeries(h, v, k, q);
-    elseif method == 6
-        v = AsymmetricalAfinParallel(h, v, k, q);
-    end
+      if method == 1
+          disp("aca");
+          v = NoLineal(h, Lineal(h, v, k), k);
+      elseif method == 2
+          v = Lineal(h/2, NoLineal(h, Lineal(h/2, v, k), k), k);
+      elseif method == 3
+          v = SymmetricalAfinSeries(h, v, k, q);
+      elseif method == 4
+          v = SymmetricalAfinParallel(h, v, k, q);
+      elseif method == 5
+          v = AsymmetricalAfinSeries(h, v, k, q);
+      elseif method == 6
+          v = AsymmetricalAfinParallel(h, v, k, q);
+      else
+          disp("fasfas");
+      end
     
     if mod(n,nplt)==0
       u = real(ifft(v));
@@ -79,19 +82,19 @@ function y = display_method(method)
     y = 1;
     
     if method == 1
-          disp("Método elegido: Lie Trotter.");
+          disp("Método elegido: Lie Trotter");
     elseif method == 2
-          disp("Método elegido: Strang.");
-    elseif method == 3
-          disp("Método elegido: Afin Simétrico en Serie.");
+          disp("Método elegido: Strang");
+    elseif method == ''3
+          disp("Método elegido: Afin Simétrico en Serie");
     elseif method == 4
-          disp("Método elegido: Afin Simétrico en Paralelo.");
+          disp("Método elegido: Afin Simétrico en Paralelo");
     elseif method == 5
-          disp("Método elegido: Afin Asimétrico en Serie.");
+          disp("Método elegido: Afin Asimétrico en Serie");
     elseif method == 6
-          disp("Método elegido: Afin Asimétrico en Paralelo.");
+          disp("Método elegido: Afin Asimétrico en Paralelo");
     else
-          disp("ERROR. El metodo ingresado no existe.");
+          disp("Error de argumento");
           y = -1;
     end
 end

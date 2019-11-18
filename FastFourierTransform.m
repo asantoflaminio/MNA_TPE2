@@ -4,7 +4,9 @@
 % https://la.mathworks.com/matlabcentral/answers/67283-need-fft-code-for-matlab-not-built-in
 
 function z=FastFourierTransform(x)
+  
   N=length(x);
+  
   if N <= 1
     z = x.';
   else
@@ -16,4 +18,5 @@ function z=FastFourierTransform(x)
     T = e.*odd;
     z = [even + T, even - T].';
   end
+  
 return
