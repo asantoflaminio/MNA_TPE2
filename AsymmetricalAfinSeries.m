@@ -1,6 +1,9 @@
 function v = AsymmetricalAfinSeries(h, v, k, q)
-  gammas = asym_gammas_calculator(q);
+  
   Z = 0;
+  
+  gammas = asym_gammas_calculator(q);
+  
   for i = 1:q
     X = v;
     for j = 1:i
@@ -8,5 +11,7 @@ function v = AsymmetricalAfinSeries(h, v, k, q)
     end
     Z = Z + gammas(i) .* X;
   end
+  
   v = Z;
+  
 end

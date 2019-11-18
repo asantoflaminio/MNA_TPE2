@@ -1,15 +1,16 @@
-
 function s = CalculateSpeedUp(initialTime, finalTime)
-    [hi,mi,si] = hms(initialTime);
-    [hf,mf,sf] = hms(finalTime);   
+
+  [hi,mi,si] = hms(initialTime);
+  [hf,mf,sf] = hms(finalTime);   
   
-    mi = (hi * 60) + mi;
-    si = (mi * 60) + si;
+   mi = (hi * 60) + mi;
+   si = (mi * 60) + si;
     
-    mf = (hf * 60) + mf;
-    sf = (mf * 60) + sf;
+   mf = (hf * 60) + mf;
+   sf = (mf * 60) + sf;
     
-    s = si / sf;
-    return
+   s = si / sf;
+   return
+   
 end
 

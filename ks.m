@@ -28,16 +28,16 @@ tmax = 150; nmax = round(tmax/h); nplt = floor((tmax/100)/h);
 q = 4;
 
 for n = 1:nmax
-  t = n*h;
+    t = n*h;
   
     % LIE TROTTER
-    v = NoLineal(h, Lineal(h, v, k), k);
+    % v = NoLineal(h, Lineal(h, v, k), k);
     
     % Strang
     %v = Lineal(h/2, NoLineal(h, Lineal(h/2, v, k), k), k);
     
     %AFIN simetrico en serie
-    %v = SymmetricalAfinSeries(h, v, k, q);
+    v = SymmetricalAfinSeries(h, v, k, q);
     
     %AFIN simetrico en paralelo
     %v = SymmetricalAfinParallel(h, v, k, q);
@@ -52,6 +52,7 @@ for n = 1:nmax
     u = real(ifft(v));
     uu = [uu,u]; tt = [tt,t];
   end
+  
 end
 
 finalTime = datetime('now');
