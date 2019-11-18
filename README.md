@@ -1,6 +1,6 @@
 ## Métodos Númericos Avanzados - Trabajo Práctico 2 - Grupo 2 - 2019
 
-##### Instrucciones para seleccionar el método deseado
+#### Instrucciones para seleccionar el método deseado
 
 Para poder resolver la ecuación de Kuramoto Shivashinsky, se implementaron 6 métodos distintos; Lie Trotter, Slang, Afin Simetrico Paralelo, Afin Asimetrico en Serie, Afin Simetrico en Serie y Afin Asimetrico en Serie. Para seleccionar uno en particular a ejecutar tendremos que:
 
@@ -25,7 +25,7 @@ Para correr Lie Trotter tendremos que tener escrito
 y para correr Afin Asimetrico en Serie
 `method = 5;`
 
-##### Instrucciones de ejecución
+#### Instrucciones de ejecución
 
 Para ejecutar el trabajo será necesario tener Matlab instalado.
 
@@ -35,7 +35,7 @@ Para ejecutar el trabajo será necesario tener Matlab instalado.
 	Seleccionar el método a ejecutar
 	Correr el programa presionando Run o bien utilizando la ventana de comandos
 
-##### Integrantes
+#### Integrantes
 - Clozza, Nicolás
 - Della Sala, Rocio
 - Mamone, Federico
