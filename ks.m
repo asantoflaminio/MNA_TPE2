@@ -72,7 +72,7 @@ function y = main
   material([0.30 0.60 0.60 40.00 1.00]);
 
   %Imprimo Execution Time
-  executionTime
+  disp("Tiempo de ejecucion: " + executionTime + " s.");
 end
 
 function y = display_method(method)
