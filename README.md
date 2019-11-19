@@ -2,7 +2,7 @@
 
 #### Instrucciones para seleccionar el método deseado
 
-Para poder resolver la ecuación de Kuramoto Shivashinsky, se implementaron 6 métodos distintos; Lie Trotter, Slang, Afín Simétrico Paralelo, Afín Asimétrico en Serie, Afín Simétrico en Serie y Afín Asimétrico en Serie. Para seleccionar uno en particular a ejecutar tendremos que:
+Para poder resolver la ecuación de Kuramoto Shivashinsky, se implementaron 6 métodos distintos; Lie Trotter, Strang, Afín Simétrico Paralelo, Afín Asimétrico en Serie, Afín Simétrico en Serie y Afín Asimétrico en Serie. Para seleccionar uno en particular a ejecutar tendremos que:
 
 	1. Abrir el archivo ks.m.
 	2. Cambiar el número del método a ejecutar, reescribiendo la parte derecha la asignación en la línea 4 del archivo.
@@ -32,6 +32,12 @@ Para ejecutar el trabajo será necesario tener Matlab instalado.
 	3. Abrir el archivo ks.m.
 	4. Seleccionar el método a ejecutar.
 	5. Correr el programa presionando Run o bien utilizando la ventana de comandos.
+
+Alternativamente en ks.m podemos cambiar otros parametros como:
+
+- h: El paso seleccionado
+- q: Orden del método 
+- pert: Perturbación
 
 #### Integrantes
 - Clozza, Nicolás
