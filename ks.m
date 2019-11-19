@@ -40,16 +40,22 @@ function y = main
     t = n*h;
     
     if method == 1
+        % Lie Trotter
         v = NoLineal(h, Lineal(h, v, k), k);
     elseif method == 2
+        % Strang
         v = Lineal(h/2, NoLineal(h, Lineal(h/2, v, k), k), k);
     elseif method == 3
+        % Afin Simetrico Serie
         v = SymmetricalAfinSeries(h, v, k, q);
     elseif method == 4
+        % Afin Simetrico Paralelo
         v = SymmetricalAfinParallel(h, v, k, q);
     elseif method == 5
+        % Afin Asimetrico Serie
         v = AsymmetricalAfinSeries(h, v, k, q);
     elseif method == 6
+        % Afin ASimetrico Paralelo
         v = AsymmetricalAfinParallel(h, v, k, q);
     end
     
