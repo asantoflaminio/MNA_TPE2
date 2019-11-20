@@ -1,11 +1,10 @@
 function v = AsymmetricalAfinParallel(h, v, k, q)
 
-  %nucleus = 4;
   x = v;
   
   gammas = asym_gammas_calculator(q);
   
-  spmd(q) % en vez de q era nucleus
+  spmd(q) % en vez de q era n
     
     for j = 1:q   
         if labindex == j % en vez de j era s, pero no tenia sentido
@@ -18,7 +17,7 @@ function v = AsymmetricalAfinParallel(h, v, k, q)
     
   end
  
-  for s = 2:q % en realidad era q
+  for s = 2:q 
     x{1} = x{1}+x{s};
   end
   
